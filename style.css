@@ -244,41 +244,40 @@ header.site-header nav ul li a:hover {
 
 /* Adjust button colors for contrast against dark video */
 .hero .primary-btn {
-    background-color: var(--accent-color); /* Use accent color for primary button */
+    background-color: var(--accent-color);
     color: var(--dark-color);
     border: 2px solid var(--accent-color);
 }
 
 .hero .primary-btn:hover {
-    background-color: #d17a00; /* Slightly darker accent */
+    background-color: #d17a00;
     color: var(--light-color);
     transform: translateY(-2px);
 }
 
 .hero .secondary-btn {
     background-color: transparent;
-    color: var(--light-color); /* White */
-    border: 2px solid var(--light-color); /* White border */
+    color: var(--light-color);
+    border: 2px solid var(--light-color);
 }
 
 .hero .secondary-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.2);
     color: var(--light-color);
     transform: translateY(-2px);
 }
 
 
 /* Rest of your sections need solid backgrounds to cover the video */
-.about, .gallery, .pricing, .testimonials, .contact, footer, .client-stats { /* Added .client-stats here */
-    position: relative; /* Ensure they layer above the video */
-    z-index: 1; /* A z-index greater than the video's -1 */
-    /* Your existing background colors from :root will work here */
+.about, .gallery, .pricing, .testimonials, .contact, footer, .client-stats {
+    position: relative;
+    z-index: 1;
 }
 
 /* About Section */
 .about {
     padding: 5rem 0;
-    background-color: var(--card-bg); /* Original background */
+    background-color: var(--card-bg);
 }
 
 .about-content {
@@ -325,7 +324,7 @@ header.site-header nav ul li a:hover {
 /* New Client Stats Section */
 .client-stats {
     padding: 5rem 0;
-    background-color: var(--body-bg); /* Use a complementary background color */
+    background-color: var(--body-bg);
     text-align: center;
 }
 
@@ -346,11 +345,11 @@ header.site-header nav ul li a:hover {
 }
 
 .client-count-number {
-    font-size: 5rem; /* Larger font size for impact */
-    font-weight: 800; /* Extra bold */
-    color: var(--primary-color); /* Your primary brand color */
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
-    line-height: 1; /* Adjust line height to prevent extra space */
+    line-height: 1;
 }
 
 .client-count-text {
@@ -364,7 +363,7 @@ header.site-header nav ul li a:hover {
 /* Services Section (if you add one based on this style) */
 .services {
     padding: 5rem 0;
-    background-color: var(--body-bg); /* Original background */
+    background-color: var(--body-bg);
 }
 
 .service-grid {
@@ -426,7 +425,7 @@ header.site-header nav ul li a:hover {
 /* Gallery Section */
 .gallery {
     padding: 5rem 0;
-    background-color: var(--card-bg); /* Original background */
+    background-color: var(--card-bg);
 }
 
 .gallery-filter {
@@ -511,7 +510,7 @@ header.site-header nav ul li a:hover {
 /* Pricing Section */
 .pricing {
     padding: 5rem 0;
-    background-color: var(--body-bg); /* Original background */
+    background-color: var(--body-bg);
 }
 
 .pricing-grid {
@@ -628,7 +627,7 @@ header.site-header nav ul li a:hover {
 /* Testimonials Section */
 .testimonials {
     padding: 5rem 0;
-    background-color: var(--card-bg); /* Original background */
+    background-color: var(--card-bg);
 }
 
 .testimonial-slider {
@@ -745,7 +744,7 @@ header.site-header nav ul li a:hover {
 /* Contact Section */
 .contact {
     padding: 5rem 0;
-    background-color: var(--body-bg); /* Original background */
+    background-color: var(--body-bg);
 }
 
 .contact-content {
@@ -843,10 +842,9 @@ header.site-header nav ul li a:hover {
 
 /* Specific styling for the Google Form iframe inside its container */
 .contact-form-container iframe {
-    display: block; /* Ensures it behaves like a block element */
-    margin: 0 auto; /* Centers the iframe if its intrinsic width is less than 100% */
-    max-width: 100%; /* Ensures it doesn't overflow its container */
-    /* The width and height are set directly in the HTML iframe tag */
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 
@@ -1322,8 +1320,31 @@ footer {
     }
 
     header.site-header nav ul { /* Target specific header class */
-        display: none;
-        /* Add styles for when it's active, e.g., flex-direction: column; position: absolute; */
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-color); /* Dark background for visibility */
+        padding: 1rem 0;
+        box-shadow: var(--shadow-lg);
+        border-radius: var(--border-radius);
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    header.site-header nav ul.active {
+        display: flex; /* Make it visible when 'active' class is present */
+    }
+
+    header.site-header nav ul li {
+        margin: 0.5rem 0; /* Adjust vertical spacing for menu items */
+    }
+
+    header.site-header nav ul li a {
+        padding: 0.5rem 1.5rem; /* Add padding for clickable area */
+        display: block; /* Make the whole link clickable */
+        color: var(--light-color); /* Ensure text is visible on dark background */
     }
 
     .mobile-menu-toggle {
